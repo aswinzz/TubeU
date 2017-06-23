@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>PowerTube-v2.0</title>
+  
+  <style type="text/css">
+
+img {
+  max-width: 100%;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.vid-container {
+  z-index: 2;
+  margin-right: 7%;
+}
+
+.vid-thumb:hover {
+  cursor: pointer;
+}
+
+.vid-link {
+  color: #167ac6;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: 2.6em;
+  background-color: #fff;
+  display: block;
+  line-height: 1.3em;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  font-size: 13px;
+  font-family: Roboto, arial, sans-serif;
+  font-weight: 500;
+}
+
+.vid-thumb-container {
+  
+  position: relative;
+  z-index: -2;
+}
+
+.video-time {
+  margin-top: 0;
+  margin-right: 0;
+  padding: 0 4px;
+  font-weight: 500;
+  font-size: 11px;
+  background-color: #000;
+  color: #fff!important;
+  height: 14px;
+  line-height: 14px;
+  opacity: .75;
+  filter: alpha(opacity=75);
+  display: -moz-inline-stack;
+  vertical-align: top;
+  display: inline-block;
+  font-family: Roboto, arial, sans-serif;
+}
+
+.video-time,
+.video-time-overlay {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
+
+.channel-link {
+  color: #767676;
+}
+
+  </style>
+  
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+</head>
+
+<body>
+
+ <h3><center>Search-Results</center></h3>
+ 
+
+<div class="container">
+<hr>
+  <div class="row">
+  <% for(var i=0;i<3;i++){ %>
+    <div class="col-md-3 col-sm-6 vid-container">
+      <div class="vid-thumb-container">
+      <iframe src="https://www.youtube.com/embed/<%= data[i].id.videoId %>" allowfullscreen="allowfullscreen" class="vid-thumb"></iframe>
+      </div> 
+      <a href="https://www.youtube.com/watch?v=<%= data[i].id.videoId %>" class="vid-link" name="<%= data[i].id.videoId %>"><%= data[i].snippet.title %></a>
+      <span class="vid-link channel-link"><%= data[i].snippet.channelTitle %></span>
+    </div>
+    <% } %>
+  </div>
+  <hr>
+  <div class="row">
+<div class="row">
+  <% for(var i=3;i<6;i++){ %>
+    <div class="col-md-3 col-sm-6 vid-container">
+      <div class="vid-thumb-container">
+      <iframe src="https://www.youtube.com/embed/<%= data[i].id.videoId %>" allowfullscreen="allowfullscreen" class="vid-thumb"></iframe>
+      </div> 
+      <a href="https://www.youtube.com/watch?v=<%= data[i].id.videoId %>" class="vid-link" name="<%= data[i].id.videoId %>"><%= data[i].snippet.title %></a>
+      <span class="vid-link channel-link"><%= data[i].snippet.channelTitle %></span>
+    </div>
+    <% } %>
+  </div>
+  <hr>
+<div class="row">
+  <% for(var i=6;i<9;i++){ %>
+    <div class="col-md-3 col-sm-6 vid-container">
+      <div class="vid-thumb-container">
+      <iframe src="https://www.youtube.com/embed/<%= data[i].id.videoId %>" allowfullscreen="allowfullscreen" class="vid-thumb"></iframe>
+      </div> 
+      <a href="https://www.youtube.com/watch?v=<%= data[i].id.videoId %>" class="vid-link" name="<%= data[i].id.videoId %>"><%= data[i].snippet.title %></a>
+      <span class="vid-link channel-link"><%= data[i].snippet.channelTitle %></span>
+    </div>
+    <% } %>
+  </div>
+  <hr>
+</div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
